@@ -6,8 +6,6 @@ class Webcambild extends Plugin {
 
 function getContent($value) {
     
-
-    
 $parameters = "width|height|url|refresh";
 
 //Zugelassene Parameter parsen
@@ -66,7 +64,7 @@ function getConfig() {
         return $config;
         
 
-} // function getConfig    
+} // End of function getConfig    
     
 
    
@@ -76,7 +74,7 @@ function getConfig() {
     function getInfo() {
         global $ADMIN_CONF;
         $language = $ADMIN_CONF->get("language");
-        # nur eine Sprache ---------------------------------
+        # nur eine Sprache (noch?) ---------------------------------
         $info = array(
             // Plugin-Name + Version
             "<b>Webcambild</b>",
@@ -85,11 +83,10 @@ function getConfig() {
             // Kurzbeschreibung 
             "Bietet eine einfache Möglichkeit, ein Webcambild einzubauen. Das Bild wird in ein iFrame eingebettet, so dass es sich zyklisch refresht",
             // Name des Autors
-            "Bo",
+            "Boris",
             // Download-URL
             "http://www.mozilo.de/pluginarchiv/",
-            // Platzhalter für die Selectbox in der Editieransicht 
-            // - ist das Array leer, erscheint das Plugin nicht in der Selectbox
+            // Selectbox in der Editieransicht 
             array(
                 '{Webcambild|
 url=www.url_zum_cambild.de/camimage.jpg
@@ -99,14 +96,13 @@ refresh=30
             )
         );
         // Rückgabe der Infos.
-        // Auch hier könnte man die Inhalte natürlich von der aktuell im Admin eingestellten 
-        // Sprache abhängig machen - siehe getConfig().
         return $info;
         
-    } // function getInfo
+    } // End of function getInfo
 
-} // class DEMOPLUGIN
+} // End of class Webcambild
 
+// Helper function
     function trimplus ($v) {
     
    $v =  trim($v);
